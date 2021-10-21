@@ -1,0 +1,25 @@
+{
+  "name": "school",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyapatil598/school.git"
+  },
+  "author": "CAPA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyapatil598/school/issues"
+  },
+  "homepage": "https://github.com/chaitanyapatil598/school#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11"
+  }
+}
