@@ -1,6 +1,8 @@
-module.exports=(app)=>{
-   
-   // welcome test api
+
+const schoolController = require('../packages/school/school.controller')
+module.exports = (app) => {
+
+    // welcome test api
     app.get('/', (req, res) => {
         console.log('hello from client')
         try {
@@ -19,4 +21,11 @@ module.exports=(app)=>{
             })
         }
     })
+
+    // add school api
+    app.post('/school/add', schoolController.addSchool)
 }
+
+
+
+
