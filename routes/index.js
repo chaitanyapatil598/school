@@ -1,8 +1,7 @@
 
 const schoolController = require('../packages/school/school.controller')
 module.exports = (app) => {
-
-    // welcome test api
+   // welcome test api
     app.get('/', (req, res) => {
         console.log('hello from client')
         try {
