@@ -1,9 +1,8 @@
 const mongoose = require ( 'mongoose')
 mongoose.promise = require ( 'bluebird')
 let dbUrl='mongodb://localhost:27017/schoolDB'
-let dbUrl1='mongodb://localhost:27017/studentDB'
+
 mongoose.connect(dbUrl)
-mongoose.connect(dbUrl1)
 
 // when we connected successfully
 mongoose.connection.on('connected', function(){

@@ -1,11 +1,11 @@
 
 const schoolController = require('../packages/school/school.controller')
 
-const studentController= require('../packages/student/student.controller')
+const studentController = require('../packages/student/student.controller')
 module.exports = (app) => {
 
     // welcome test api
-    app.get('/', (req, res,next) => {
+    app.get('/', (req, res, next) => {
         console.log('hello from client')
         try {
             return res.status(200).send({
@@ -28,8 +28,9 @@ module.exports = (app) => {
     app.post('/school/add', schoolController.addSchool)
 
 
-//  add student api
-app.post('/student/add', studentController.addStudent)
-app.delete('/student/delete', studentController.deleteStudent)
+    //  add student api
+    app.post('/student/add', studentController.addStudent)
+    app.delete('/student/delete/:studentId', studentController.deleteStudent)
+    app.get('/student/findList', studentController.getAllStudent)
 }
 

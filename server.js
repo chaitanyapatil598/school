@@ -7,7 +7,7 @@ const port = 3000
 require('./configration/mongo')
 //require routes
 require('./routes/index')(app)
-require('./routes/index')(app)
+
 
 app.listen(port, () => {
     console.log(`congratulation !! server is listening on ${port}`)
