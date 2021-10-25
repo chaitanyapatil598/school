@@ -1,4 +1,4 @@
-const { reject } = require('bluebird')
+
 const studentService = require('./student.service')
 module.exports = {
     addStudent: async (req, res, next) => {
@@ -28,7 +28,7 @@ module.exports = {
                     status: false,
                     statusCode: 400
                 })
-            } else if (studentData.isActive != true && studentData.isActive != false) {
+            } else if (studentData.isActive != true && studentData.isActive!= false) {
                 return res.status(400).send({
                     message: 'student isActive required!',
                     status: false,

@@ -2,6 +2,7 @@
 const schoolController = require('../packages/school/school.controller')
 
 const studentController = require('../packages/student/student.controller')
+const teacherController = require('../packages/teacher/teacher.controller')
 module.exports = (app) => {
 
     // welcome test api
@@ -32,5 +33,12 @@ module.exports = (app) => {
     app.post('/student/add', studentController.addStudent)
     app.delete('/student/delete/:studentId', studentController.deleteStudent)
     app.get('/student/findList', studentController.getAllStudent)
+   
+    /// add teacher api
+
+    app.post('/teacher/add',teacherController.addTeacher)
+    app.delete('/teacher/delete/:teacherId', teacherController.deleteTeacher)
+    app.get('/teacher/AllList',teacherController.getAllTeacher)
+    app.get('/teacher/OneTeacher',teacherController.getOneTeacher)
 }
 

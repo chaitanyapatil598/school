@@ -21,15 +21,8 @@ exports.insertStudent = async (studentData) => {
 exports.updateStudentById = async (_id, studentData) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const student = await StudentModel.findByIdAndUpdate({ _id }, {
-                studentName: studentData.studentname,
-                Roll_no: studentData.Roll_no,
-                address: studentData.adress,
-                city: studentData.city,
-                isActive: studentData.isActive,
-                year: studentData.year,
-                Student_id: studentData.student_id
-            }, { new: true })
+            const student = await StudentModel.findByIdAndUpdate({ _id },
+                 { new: true })
             resolve(student)
         } catch (error) {
             reject(error)
