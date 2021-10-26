@@ -20,6 +20,13 @@ exports.updateTeacherById = async (_id, teacherData) => {
     return new Promise(async (resolve, reject) => {
         try {
             const teacher = await teacherModel.findByIdAndUpdate({ _id },
+                {
+                    teacherName: teacherData.teacherName,
+                    department: teacherData.department,
+                    address: teacherData.address,
+                    isActive: teacherData.isActive,
+                    workExperience: teacherData.workExperience
+                },
                 { new: true })
             resolve(teacher)
         } catch (error) {
@@ -37,22 +44,21 @@ exports.deleteTeacherById = async (_id) => {
         }
     })
 }
-exports.findOneTeacher = async (_id, teacherData) => {
+exports.findOneTeacher = async (_id) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const teacher = await teacherModel.findOne({ _id },
-                { new: true })
+            const teacher = await teacherModel.findOne({ _id })
             resolve(teacher)
         } catch (error) {
             reject(error)
         }
     })
 }
-exports.findAllTeacher = async (_id, teacherData) => {
+exports.findAllTeacher = async () => {
     return new Promise(async (resolve, reject) => {
         try {
-            const teacher = await teacherModel.find({ _id },
-                { new: true })
+            const teacher = await teacherModel.find()
+
             resolve(teacher)
         } catch (error) {
             reject(error)

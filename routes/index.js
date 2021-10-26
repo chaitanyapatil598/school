@@ -33,12 +33,13 @@ module.exports = (app) => {
     app.post('/student/add', studentController.addStudent)
     app.delete('/student/delete/:studentId', studentController.deleteStudent)
     app.get('/student/findList', studentController.getAllStudent)
-   
+
     /// add teacher api
 
-    app.post('/teacher/add',teacherController.addTeacher)
+    app.post('/teacher/add', teacherController.addTeacher)
     app.delete('/teacher/delete/:teacherId', teacherController.deleteTeacher)
-    app.get('/teacher/AllList',teacherController.getAllTeacher)
-    app.get('/teacher/OneTeacher',teacherController.getOneTeacher)
+    app.get('/teacher/AllList', teacherController.getAllTeacher)
+    app.get('/teacher/OneTeacher', teacherController.getOneTeacher)
+    app.put('/teacher/update/:teacherId', teacherController.updateTeacher)
 }
 

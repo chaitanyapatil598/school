@@ -101,7 +101,7 @@ module.exports = {
         try {
             const teacherList = await teacherService.findAllTeacher({
 
-                
+
             })
             if (!teacherList) {
                 return res.status(200).send({
@@ -157,5 +157,69 @@ module.exports = {
             })
         }
 
+    },
+    updateTeacher: async (req, res, next) => {
+        try {
+            const teacherData = req.body
+            const _id = req.params.teacherId
+            if (!_id) {
+                return res.status(400).send({
+                    message: 'teacherId required',
+                    status: false,
+                    statusCode: 400
+                })
+            } else if (!teacherData.teacherName) {
+                return res.status(400).send({
+                    message: 'teacher name required',
+                    status: false,
+                    statusCode: 400
+                })
+            } else if (!teacherData.address) {
+                return res.status(400).send({
+                    message: 'teacher address required',
+                    status: false,
+                    statusCode: 400
+                })
+            } else if (!teacherData.department) {
+                return res.status(400).send({
+                    message: 'teacher department required',
+                    status: false,
+                    statusCode: 400
+                })
+            } else if (!teacherData.workExperience) {
+                return res.status(400).send({
+                    message: 'teacher experience required',
+                    status: false,
+                    statusCode: 400
+                })
+            } else if (teacherData.isActive != true && teacherData.isActive != false) {
+                return res.status(400).send({
+                    message: 'teacher is Active invalid',
+                    status: false,
+                    statusCode: 400
+                })
+            }
+            const teacherResult = await teacherService.updateTeacherById(_id, teacherData)
+            if (!teacherResult) {
+                return res.status(400).send({
+                    message: 'teacher update failed',
+                    status: false,
+                    statusCode: 400
+                })
+            }
+            return res.status(200).send({
+                data:teacherResult,
+                message: 'teacher  updated successfully',
+                status: true,
+                statusCode: 200
+            })
+        } catch (error) {
+            return res.status(500).send({
+                message: 'internal server error',
+                status: false,
+                statusCode: 500,
+                error
+            })
+        }
     }
 }

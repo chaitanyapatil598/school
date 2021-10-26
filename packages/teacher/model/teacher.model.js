@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const teacherSchema = new mongoose.Schema({
     teacherName: String,
-    adress: String,
+    address: String,
     department: String,
     workExperience: Number,
     isActive: Boolean,
