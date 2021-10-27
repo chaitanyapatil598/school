@@ -11,5 +11,5 @@ const schoolSchema = new mongoose.Schema({
 });
 
 const SchoolModel = mongoose.model("school", schoolSchema);
-
+// school module export 
 module.exports = SchoolModel;
