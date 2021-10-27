@@ -1,6 +1,5 @@
 
 const schoolController = require('../packages/school/school.controller')
-
 const studentController = require('../packages/student/student.controller')
 const teacherController = require('../packages/teacher/teacher.controller')
 module.exports = (app) => {

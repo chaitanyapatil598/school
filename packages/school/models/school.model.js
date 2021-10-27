@@ -5,7 +5,9 @@ const schoolSchema = new mongoose.Schema({
     address: String,
     state: String,
     isOpen: Boolean,
-    year: Number
+    year: Number, 
+    telephoneNo: Number,
+    emailId:String 
 });
 
 const SchoolModel = mongoose.model("school", schoolSchema);
