@@ -141,7 +141,7 @@ module.exports = {
 
             }
             return res.status(200).send({
-                data: teacherList,
+                data: teacherList, // oneeacher, correctAns
                 message: 'oneTeacher get successfully',
                 status: true,
                 statusCode: 200

@@ -8,6 +8,7 @@ require('./configration/mongo')
 //require routes
 require('./routes/index')(app)
 
+
 app.listen(port, () => {
-    console.log(`congratulation !! server is listening on ${port}`)
+    console.log(` !! server is listening on ${port}`)
 })
