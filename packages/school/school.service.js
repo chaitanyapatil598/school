@@ -21,7 +21,7 @@ exports.updateSchoolById = async (_id, schoolData) => {
     return new Promise(async (resolve, reject) => {
         try {
             const school = await school.findByIdAndUpdate({ _id }, {
-                schoolname: schoolData.name,
+                schoolName: schoolData.schoolName,
                 registerNo: schoolData.registerNo,
                 address: schoolData.address,
                 state: schoolData.state,

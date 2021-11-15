@@ -3,7 +3,7 @@ module.exports = {
     addSchool: async (req, res, next) => {
         try {
             const schoolData = req.body
-            if (!schoolData.name) {
+            if (!schoolData.schoolName) {
                 return res.status(400).send({
                     message: 'school name required!',
                     status: false,

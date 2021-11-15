@@ -1,6 +1,8 @@
 const express = require("express")
 const app = express()
 app.use(express.json())
+const cors = require('cors');
+app.use(cors());
 const port = 3000
 
 //require mongoDB connection
@@ -10,5 +12,6 @@ require('./routes/index')(app)
 
 
 app.listen(port, () => {
-    console.log(` !! server is listening on ${port}`)
+    console.log(` congratulation !! server is listening on ${port}`)
 })
+

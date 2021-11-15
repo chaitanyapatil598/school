@@ -12,7 +12,7 @@ module.exports = {
                     status: false,
                     statusCode: 400
                 })
-            } else if (!teacherData.adress) {
+            } else if (!teacherData.address) {
                 return res.status(400).send({
                     message: 'teacher adress required!',
                     status: false,

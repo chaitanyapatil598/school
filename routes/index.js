@@ -9,7 +9,7 @@ module.exports = (app) => {
         console.log('hello from client')
         try {
             return res.status(200).send({
-                massage: ' welcome to school API',
+                message: ' welcome to school API',
                 status: true,
                 statusCode: 200
             }
