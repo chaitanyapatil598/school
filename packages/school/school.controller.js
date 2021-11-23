@@ -27,13 +27,13 @@ module.exports = {
                     status: false,
                     statusCode: 400
                 })
-            } else if (schoolData.isOpen!=true && schoolData.isOpen!=false) {
+            } else if (schoolData.isOpen != true && schoolData.isOpen != false) {
                 return res.status(400).send({
                     message: 'school isOpen required!',
                     status: false,
                     statusCode: 400
                 })
-                
+
             } else if (!schoolData.year) {
                 return res.status(400).send({
                     message: 'school year required!',
@@ -58,6 +58,25 @@ module.exports = {
             })
 
         }
-        
+
+    },
+    getSchoolList: async (req, res, next) => {
+        try {
+            const schoolList = await SchoolService.getSchoollist()
+            return res.status(200).send({
+                data: schoolList,
+                message: 'school list get succesfully',
+                status: false,
+                statusCode: 200
+
+            })
+        } catch (error) {
+            return res.status(500).send({
+                message: 'internal server at add school list',
+                status: false,
+                statusCode: 500,
+                error
+            })
+        }
     }
 }

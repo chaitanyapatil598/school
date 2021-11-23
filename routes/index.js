@@ -26,7 +26,7 @@ module.exports = (app) => {
 
     // add school api
     app.post('/school/add', schoolController.addSchool)
-
+    app.get('/school/list', schoolController.getSchoolList)
 
     //  add student api
     app.post('/student/add', studentController.addStudent)
