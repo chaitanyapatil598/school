@@ -1,7 +1,7 @@
 const mongoose = require ( 'mongoose')
 mongoose.promise = require ( 'bluebird')
 let  dbUrl='mongodb://localhost:27017/schoolDB' 
-
+mongoose.set('strictQuery', true)
 mongoose.connect(dbUrl)
 
 // when we connected successfully
