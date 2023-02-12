@@ -102,7 +102,6 @@ module.exports = {
             })
 
         }
-
     },
     getAllStudent: async (req, res, next) => {
         try {
